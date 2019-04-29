@@ -1,4 +1,4 @@
-# Utiliser Git en SSH
+﻿# Utiliser Git en SSH
 
 Git peut être utiliser en HTTP et en SSH. L'avantage du deuxième est qu'il est possible de mettre en place des clés SSH, et de ne pas avoir à retaper son user/pw à chaque push
 
@@ -12,7 +12,7 @@ Sur gitlab, aller sur settings > ssh keys > add an SSH key si aucune n'est déj�
 
 # Charte sur comment utiliser Git
 
-1. Petit récapitulatif de l'organisation des branches :
+1. Petit récapitulatif de l'organisation des branches:
     - **master** : cette branche correspond à la version **stable** et **actuelle** du projet. Elle doit contenir exclusivement les fonctionnalités de cette version. (Donc par exemple si l'on developpe la v2 et que la dernière version terminée est la v1, toutes les fonctionnalités propres à la v2 doivent être à part).
     - **v0/v1/...** : cette branche correspond à la version **en cours de dev** mais **stable** (c'est à dire testée et qui fonctionne parfaitement). Une fois que toutes les fonctionnalités nécessaire ont été ajoutées, la branche sera fusionnée avec master
     - Ainsi, tout developpement en cours qui n'est pas pleinement fonctionnel doit être sur une **branche a part**
