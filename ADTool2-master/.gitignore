@@ -1,0 +1,14 @@
+moveToSatoss
+target
+project/target
+.classpath
+.project
+.settings
+workbench.xmi
+bugs.txt
+notes.txt
+project/output
+tools.txt
+references
+root.xml
+Root.xml

@@ -1,0 +1,138 @@
+<?xml version='1.0'?>
+<adtree>
+	<node refinement="conjunctive">
+		<label>Breaking and Entering</label>
+		<node refinement="disjunctive">
+			<label>Get onto Premises</label>
+			<node refinement="disjunctive">
+				<label>Climb over Fence</label>
+				<parameter domainId="AdtRealDomain1" category="basic">2.0</parameter>
+				<parameter domainId="ProbSucc2" category="basic">0.95</parameter>
+				<parameter domainId="AdtRealDomain3" category="basic">0.0</parameter>
+				<node refinement="disjunctive" switchRole="yes">
+					<label>Barbed Wire</label>
+					<parameter domainId="AdtRealDomain1" category="basic">15.0</parameter>
+					<parameter domainId="ProbSucc2" category="basic">1.0</parameter>
+					<parameter domainId="AdtRealDomain3" category="basic">0.0</parameter>
+					<node refinement="disjunctive" switchRole="yes">
+						<label>Guard Aganist Barbs</label>
+						<node refinement="disjunctive">
+							<label>Use Carpet on Barbs</label>
+							<parameter domainId="AdtRealDomain1" category="basic">5.0</parameter>
+							<parameter domainId="ProbSucc2" category="basic">0.75</parameter>
+							<parameter domainId="AdtRealDomain3" category="basic">0.0</parameter>
+						</node>
+						<node refinement="disjunctive">
+							<label>Wear Protective Clothing</label>
+							<parameter domainId="AdtRealDomain1" category="basic">10.0</parameter>
+							<parameter domainId="ProbSucc2" category="basic">0.85</parameter>
+							<parameter domainId="AdtRealDomain3" category="basic">0.0</parameter>
+						</node>
+					</node>
+				</node>
+			</node>
+			<node refinement="disjunctive">
+				<label>Enter through Gate</label>
+				<parameter domainId="AdtRealDomain1" category="basic">10.0</parameter>
+				<parameter domainId="ProbSucc2" category="basic">0.75</parameter>
+				<parameter domainId="AdtRealDomain3" category="basic">0.0</parameter>
+			</node>
+		</node>
+		<node refinement="disjunctive">
+			<label>Get into Warehouse</label>
+			<node refinement="disjunctive">
+				<label>Enter through Door</label>
+				<parameter domainId="AdtRealDomain1" category="basic">15.0</parameter>
+				<parameter domainId="ProbSucc2" category="basic">1.0</parameter>
+				<parameter domainId="AdtRealDomain3" category="basic">0.0</parameter>
+				<node refinement="disjunctive" switchRole="yes">
+					<label>Monitor with Biometric Sensors</label>
+					<parameter domainId="AdtRealDomain1" category="basic">20.0</parameter>
+					<parameter domainId="ProbSucc2" category="basic">0.95</parameter>
+					<parameter domainId="AdtRealDomain3" category="basic">0.0</parameter>
+					<node refinement="disjunctive" switchRole="yes">
+						<label>[DUP] Steal credentials</label>
+						<parameter domainId="AdtRealDomain1" category="basic">20.0</parameter>
+						<parameter domainId="ProbSucc2" category="basic">0.4</parameter>
+						<parameter domainId="AdtRealDomain3" category="basic">0.0</parameter>
+					</node>
+				</node>
+			</node>
+			<node refinement="disjunctive">
+				<label>Enter through Loading Dock</label>
+				<parameter domainId="AdtRealDomain1" category="basic">12.0</parameter>
+				<parameter domainId="ProbSucc2" category="basic">0.75</parameter>
+				<parameter domainId="AdtRealDomain3" category="basic">0.0</parameter>
+			</node>
+		</node>
+		<node refinement="disjunctive" switchRole="yes">
+			<label>Monitor with Security Cameras</label>
+			<parameter domainId="AdtRealDomain1" category="basic">30.0</parameter>
+			<parameter domainId="ProbSucc2" category="basic">0.75</parameter>
+			<parameter domainId="AdtRealDomain3" category="basic">0.0</parameter>
+			<node refinement="disjunctive" switchRole="yes">
+				<label>Disable Cameras</label>
+				<node refinement="disjunctive">
+					<label>Laser Cameras</label>
+					<parameter domainId="AdtRealDomain1" category="basic">42.42</parameter>
+					<parameter domainId="ProbSucc2" category="basic">0.6</parameter>
+					<parameter domainId="AdtRealDomain3" category="basic">0.0</parameter>
+				</node>
+				<node refinement="disjunctive">
+					<label>Video Loop Cameras</label>
+					<parameter domainId="AdtRealDomain1" category="basic">20.0</parameter>
+					<parameter domainId="ProbSucc2" category="basic">0.75</parameter>
+					<parameter domainId="AdtRealDomain3" category="basic">0.0</parameter>
+					<node refinement="disjunctive" switchRole="yes">
+						<label>Employ Guards</label>
+						<parameter domainId="AdtRealDomain1" category="basic">100.0</parameter>
+						<parameter domainId="ProbSucc2" category="basic">0.85</parameter>
+						<parameter domainId="AdtRealDomain3" category="basic">0.0</parameter>
+						<node refinement="disjunctive" switchRole="yes">
+							<label>[DUP] Steal credentials</label>
+							<parameter domainId="AdtRealDomain1" category="basic">20.0</parameter>
+							<parameter domainId="ProbSucc2" category="basic">0.4</parameter>
+							<parameter domainId="AdtRealDomain3" category="basic">0.0</parameter>
+						</node>
+					</node>
+				</node>
+			</node>
+		</node>
+	</node>
+	<domain id="AdtRealDomain1">
+		<class>lu.uni.adtool.domains.custom.AdtRealDomain</class>
+		<tool>ADTool2</tool>
+		<name>Investment</name>
+		<description>Cost of implementing said action</description>
+		<op>min(x, y)</op>
+		<oo>min(x, y)</oo>
+		<ap>x + y</ap>
+		<ao>x + y</ao>
+		<cp>x</cp>
+		<co>x</co>
+		<opponentDefault>0.0</opponentDefault>
+		<proponentDefault>0.0</proponentDefault>
+		<oppModifiable>true</oppModifiable>
+		<proModifiable>true</proModifiable>
+	</domain>
+	<domain id="ProbSucc2">
+		<class>lu.uni.adtool.domains.adtpredefined.ProbSucc</class>
+		<tool>ADTool2</tool>
+	</domain>
+	<domain id="AdtRealDomain3">
+		<class>lu.uni.adtool.domains.custom.AdtRealDomain</class>
+		<tool>ADTool2</tool>
+		<name>Impact</name>
+		<description>Impact</description>
+		<op>0.0</op>
+		<oo>0.0</oo>
+		<ap>0.0</ap>
+		<ao>0.0</ao>
+		<cp>0.0</cp>
+		<co>0.0</co>
+		<opponentDefault>0.0</opponentDefault>
+		<proponentDefault>0.0</proponentDefault>
+		<oppModifiable>true</oppModifiable>
+		<proModifiable>true</proModifiable>
+	</domain>
+</adtree>

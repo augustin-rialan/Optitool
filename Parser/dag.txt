@@ -1,0 +1,60 @@
+Timestamp: 0.0s
+Domains found: AdtRealDomain2 , null , AdtRealDomain1
+ADDAG containing 12 nodes
+(use key file,N,D,cost=0.0 prob=-1.0) children:[]counter: (steal the disk holding DiskCryptor key file,N,A,cost=500.0 prob=-1.0)
+(hacking,AND,A,cost=-1.0 prob=-1.0) children:[(get the file with hashed passwords,N,A,cost=300.0 prob=-1.0), (ophcrack attack,N,A,cost=200.0 prob=-1.0)]counter: null
+(get the file with hashed passwords,N,A,cost=300.0 prob=-1.0) children:[]counter: (encrypt disk with DiskCryptor,AND,D,cost=-1.0 prob=-1.0)
+(use very strong password,N,D,cost=0.0 prob=-1.0) children:[]counter: null
+(security training,N,D,cost=0.0 prob=-1.0) children:[]counter: null
+(steal the disk holding DiskCryptor key file,N,A,cost=500.0 prob=-1.0) children:[]counter: null
+(use password,N,D,cost=0.0 prob=-1.0) children:[]counter: (eavesdrop to learn Bob's DiskCryptor password,N,A,cost=400.0 prob=-1.0)
+(encrypt disk with DiskCryptor,AND,D,cost=-1.0 prob=-1.0) children:[(use password,N,D,cost=0.0 prob=-1.0), (use key file,N,D,cost=0.0 prob=-1.0)]counter: null
+(ophcrack attack,N,A,cost=200.0 prob=-1.0) children:[]counter: (use very strong password,N,D,cost=0.0 prob=-1.0)
+(get Bob's password,OR,A,cost=-1.0 prob=-1.0) children:[(hacking,AND,A,cost=-1.0 prob=-1.0), (guessing,N,A,cost=10000.0 prob=-1.0)]counter: null
+(guessing,N,A,cost=10000.0 prob=-1.0) children:[]counter: null
+(eavesdrop to learn Bob's DiskCryptor password,N,A,cost=400.0 prob=-1.0) children:[]counter: (security training,N,D,cost=0.0 prob=-1.0)
+
+Timestamp: 0.066s
+========================Computation of leveled defense strategies========================
+Timestamp: 0.068s
+========================Testing global AS computation (smart way using the previous def strat construction)========================
+Timestamp: 0.069s
+========================Computation of the defense semantics========================
+Timestamp: 0.069s
+========================Testing the linear solver========================
+Best defense for the investment problem, for budget 150.0:
+(use very strong password,N,A,cost=0.0 prob=-1.0)
+Timestamp: 0.081s
+
+Model name:  '' - run #1    
+Objective:   Minimize(R0)
+ 
+SUBMITTED
+Model size:       16 constraints,      11 variables,           39 non-zeros.
+Sets:                                   0 GUB,                  0 SOS.
+ 
+Using DUAL simplex for phase 1 and PRIMAL simplex for phase 2.
+The primal and dual simplex pricing strategy set to 'Devex'.
+ 
+Found feasibility by dual simplex after             4 iter.
+
+Relaxed solution               -1000 after          5 iter is B&B base.
+ 
+Feasible solution              -1000 after          9 iter,         2 nodes (gap 0.0%)
+ 
+Optimal solution               -1000 after          9 iter,         2 nodes (gap 0.0%).
+
+Relative numeric accuracy ||*|| = 0
+
+ MEMO: lp_solve version 5.5.2.5 for 64 bit OS, with 64 bit REAL variables.
+      In the total iteration count 9, 0 (0.0%) were bound flips.
+      There were 2 refactorizations, 0 triggered by time and 0 by density.
+       ... on average 4.5 major pivots per refactorization.
+      The largest [LUSOL v2.2.1.0] fact(B) had 31 NZ entries, 1.0x largest basis.
+      The maximum B&B level was 3, 0.1x MIP order, 3 at the optimal solution.
+      The constraint matrix inf-norm is 500, with a dynamic range of 2000.
+      Time to load data was 0.000 seconds, presolve used 0.000 seconds,
+       ... 0.003 seconds in simplex solver, in total 0.003 seconds.
+Best defense for the investment problem, for budget 150.0:
+(use very strong password,N,A,cost=0.0 prob=-1.0)
+Timestamp: 0.12s

@@ -1,0 +1,90 @@
+<?xml version='1.0'?>
+<adtree>
+	<node refinement="disjunctive">
+		<label>get Bob&apos;s password</label>
+		<node refinement="conjunctive">
+			<label>hacking</label>
+			<node refinement="conjunctive">
+				<label>get the file with hashed passwords</label>
+				<parameter domainId="AdtRealDomain1" category="basic">0.0</parameter>
+				<parameter domainId="AdtRealDomain2" category="basic">300.0</parameter>
+				<node refinement="conjunctive" switchRole="yes">
+					<label>encrypt disk with DiskCryptor</label>
+					<node refinement="conjunctive">
+						<label>use password</label>
+						<color></color>
+						<parameter domainId="AdtRealDomain1" category="basic">0.0</parameter>
+						<parameter domainId="AdtRealDomain2" category="basic">0.0</parameter>
+						<node refinement="conjunctive" switchRole="yes">
+							<label>eavesdrop to learn Bob&apos;s DiskCryptor password</label>
+							<parameter domainId="AdtRealDomain1" category="basic">0.0</parameter>
+							<parameter domainId="AdtRealDomain2" category="basic">400.0</parameter>
+							<node refinement="conjunctive" switchRole="yes">
+								<label>security training</label>
+								<parameter domainId="AdtRealDomain1" category="basic">0.0</parameter>
+								<parameter domainId="AdtRealDomain2" category="basic">0.0</parameter>
+							</node>
+						</node>
+					</node>
+					<node refinement="conjunctive">
+						<label>use key file</label>
+						<parameter domainId="AdtRealDomain1" category="basic">0.0</parameter>
+						<parameter domainId="AdtRealDomain2" category="basic">0.0</parameter>
+						<node refinement="conjunctive" switchRole="yes">
+							<label>steal the disk holding DiskCryptor key file</label>
+							<parameter domainId="AdtRealDomain1" category="basic">0.0</parameter>
+							<parameter domainId="AdtRealDomain2" category="basic">500.0</parameter>
+						</node>
+					</node>
+				</node>
+			</node>
+			<node refinement="conjunctive">
+				<label>ophcrack attack</label>
+				<parameter domainId="AdtRealDomain1" category="basic">0.0</parameter>
+				<parameter domainId="AdtRealDomain2" category="basic">200.0</parameter>
+				<node refinement="conjunctive" switchRole="yes">
+					<label>use very strong password</label>
+					<parameter domainId="AdtRealDomain1" category="basic">0.0</parameter>
+					<parameter domainId="AdtRealDomain2" category="basic">0.0</parameter>
+				</node>
+			</node>
+		</node>
+		<node refinement="conjunctive">
+			<label>guessing</label>
+			<parameter domainId="AdtRealDomain1" category="basic">0.0</parameter>
+			<parameter domainId="AdtRealDomain2" category="basic">10000.0</parameter>
+		</node>
+	</node>
+	<domain id="AdtRealDomain1">
+		<class>lu.uni.adtool.domains.custom.AdtRealDomain</class>
+		<tool>ADTool2</tool>
+		<name>Impact</name>
+		<description>Impact</description>
+		<op>0.0</op>
+		<oo>0.0</oo>
+		<ap>0.0</ap>
+		<ao>0.0</ao>
+		<cp>0.0</cp>
+		<co>0.0</co>
+		<opponentDefault>0.0</opponentDefault>
+		<proponentDefault>0.0</proponentDefault>
+		<oppModifiable>true</oppModifiable>
+		<proModifiable>true</proModifiable>
+	</domain>
+	<domain id="AdtRealDomain2">
+		<class>lu.uni.adtool.domains.custom.AdtRealDomain</class>
+		<tool>ADTool2</tool>
+		<name>Investment</name>
+		<description>Impact</description>
+		<op>0.0</op>
+		<oo>0.0</oo>
+		<ap>0.0</ap>
+		<ao>0.0</ao>
+		<cp>0.0</cp>
+		<co>0.0</co>
+		<opponentDefault>0.0</opponentDefault>
+		<proponentDefault>0.0</proponentDefault>
+		<oppModifiable>true</oppModifiable>
+		<proModifiable>true</proModifiable>
+	</domain>
+</adtree>
